@@ -1,0 +1,442 @@
+% SixtySecondsCV LaTeX template
+% Copyright © 2020 L. Gueroult <lgueroult-at-hotmail.com>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/LaGuer/SixtySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+% * esben
+%
+% Attributions
+% ------------
+% * sixtysecondscv is based on the fortysecondcv class by Rene Wirnata
+%   (rene.wirnata@pandascience.net), released under the 3-Clause BSD license and available at
+%   https://github.com/PandaScience/FortySecondsCV/
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available at
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	profilepicsize=3.5cm,
+	% profilepicborderwidth=3.5pt,
+	profilepicstyle=profilecircle,
+	profilepiczoom=0.75,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{sixtysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{digsig}
+\usepackage[demo]{graphicx}
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+\newcommand\watermark[1]{%
+    #1%
+    \sbox0{#1}%
+    \llap{%
+    \makebox[\wd0][c]{%  hor. centering
+    \raisebox{.5\ht0}{%  approx. vert. centering
+    \csname Gin@isotrue\endcsname% = "keepaspectratio"
+    \resizebox*{.8\ht0}{.8\ht0}{% Scale down (the height is also used for the width to avoid the surrounding spaces)
+    \parbox{10em}{% Allow line breaks
+            \color{black!90}%  
+            PDF seal issued by \cvsignature
+        }%
+    }}}}%
+}
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{sixtysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Raging Bull}
+% job title/career
+\cvjobtitle{Data Scientist,\\[0.2em] Tiger of the Year}
+
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/Germany.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/France.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/Spain.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/United-States.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/Russia.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/Switzerland.png}
+\write18{wget https://ipfs.io/ipfs/QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM?filename=QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM.png}
+
+
+%% optional information
+% profile picture
+\cvprofilepic{QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM.png}
+% logo picture
+%\cvlogopic{pics/logo_txt.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{\today}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{301 Park Ave, New-York, 10022 NY, USA}
+% phone number
+\cvphone{+1 212 355 3000}
+% personal website
+\cvsite{https://laguer.github.io/sixtysecondscv/}
+% email address
+\cvmail{mail@dot.com}
+% pgp key
+\cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
+% any other custom entry
+\cvcustomdata{\faFlag}{US Citizenship}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/shiny/}}
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Social Network}
+		\begin{icontable}{2.5em}{1em}
+			\social{\aiOverleafSquare}
+				{https://www.overleaf.com/latex/templates/SixtySecondsCV/}
+				{overleaf Link}
+			\social{\faGithub}
+				{https://github.com/LaGuer/SixtySecondsCV}
+				{Github Project Page Link}
+		\end{icontable}
+
+	\profilesection{Languages}
+		\pointskill{\flag{Germany.png}}{German}{3}
+    \pointskill{\flag{Spain.png}}{Spanish}{3}
+	  \pointskill{\flag{United-States.png}}{English}{5}
+	  \pointskill{\flag{France.png}}{French}{5}
+    \pointskill{\flag{Russia.png}}{Russia}{5}
+
+	\profilesection{Hard Skills}
+		\skill{\faBalanceScale}{Sleeping almost all day}
+		\skill{\faSitemap}{Eating a lot of bamboo sprouts}
+		\skill{\faGraduationCap}{Relaxing rest of the day}
+
+	\profilesection{Soft Skills}
+		\pointskill{\faHome}{Looking Cute}{4}[4]
+			\skill[1.8em]{\faCompress}{No need to specify further}
+		\pointskill{\faChild}{Chillin' hard}{3}[4]
+			\skill[1.8em]{\faCompress}{On a tree}
+			\skill[1.8em]{\faCompress}{In the grass}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	\profilesection{About Me}
+	\aboutme{
+		The giant panda is a terrestrial animal and primarily spends its life
+		roaming and feeding in the bamboo forests of the Qinling Mountains and in
+		the hilly province of Sichuan.
+	}
+
+	\profilesection{Diagrams}
+	\begin{sidebarminipage}
+		\chartlabel{Bubble}
+		\chartlabel{Diagrams}
+		\chartlabel{with}
+		\chartlabel{proper}
+		\chartlabel{overflow}
+		\chartlabel{protection}
+		\chartlabel{for}
+		\chartlabel{labels}
+	\end{sidebarminipage}
+
+	\begin{figure}\centering
+		\smartdiagram[bubble diagram]{
+			\textcolor{white}{\textbf{Being a}} \\
+			\textcolor{white}{\textbf{Panda}}, % center bubble
+			\textcolor{black!90}{Eating},
+			\textcolor{black!90}{Sleeping},
+			\textcolor{black!90}{Rolling},
+			\textcolor{black!90}{Playing},
+			\textcolor{black!90}{Chilling}
+		}
+	\end{figure}
+
+	\chartlabel{Wheel Chart}
+
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/Chill,
+	15/3em/maincolor!15/Play,
+	30/4em/maincolor!40/Sleep,
+	20/3em/maincolor!20/Eat
+	}
+
+	\profilesection{Barskills}
+	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+	\barskill{\faImage}{Playing Chess}{30}
+	\barskill{\faMusic}{Playing the bamboo stick}{50}
+
+	\profilesection{Memberships}
+	\begin{memberships}
+		\membership[4em]{pics/logo.png}{some.site}
+		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
+			only one line}
+	\end{memberships}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Working Experience}
+\begin{cvtable}[3]
+	\cvitem{currently}{CEO The Panda Way}{Start Up}{Chief executive officer, Head
+		developer and yoga ambassador of 'The Panda Way' - A company from pandas
+		for pandas.}
+	\cvitem{2018 -- 2019}{Data Scientist}{Amis University}{
+		Reasearching the impact of adequate AMIS nutrition compared to
+		conventional feeding methods.}
+	\cvitem{2017 -- 2018}{Asset Management Information Solution}{Decentralized Exchange}{Continuously improving
+		the workflow of crypto-asset distribution and exchange.}
+\end{cvtable}
+
+
+\cvsection{Education}
+\cvsubsection{Postgraduate Training}
+\begin{cvtable}[1.5]
+	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+		{In-depth studies on the impact of bamboo nutrition for young pandas and
+		its relation to relaxing, sleeping and snoozing parts of the day.}
+	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+		{Spending one year abroad teaching about the
+		newest findings and research in the field of decentralized finance and
+		applications for BambooRelay as a trading platform.}
+\end{cvtable}
+
+
+\cvsubsection{Study}
+\begin{cvtable}[1.5]
+	\cvitem{2006 -- 2008}{Master Studies Panda Science}{Panda Academy}
+		{Focus: Advanced rice hat studies and nouveau rain-reflecting cover
+		materials.}
+	\cvitem{}{Master Theses ($\varnothing\, 1,0$)}{CRSW Institute}
+		{Impact of solar radiation onto rice hat cover materials with special
+		attention to water resistance.}
+	\cvitem{2003 -- 2006}{Bachelor Studies PandaScience}{Panda Academy}
+		{Focus: Bamboo stick morphology and its usage in different instruments.}
+	\cvitem{}{Bachelor Theses ($\varnothing\, 1,0$)}{BambooStick  Institute}
+		{The bamboo stick: An underestimated instrument in orchestras?}
+\end{cvtable}
+
+\cvsection{Publications}
+\begin{cvtable}
+	\cvpubitem{Back to Cosmos}{Sanchez et Al.}
+		{Progress in Physics}{2019}
+    \cvpubitem{Science unification and Permanent Cosmology}{Sanchez et Al.}
+        {Journal de Mathematiques pures et appliquees}{2020}
+\end{cvtable}
+
+\cvsection{Awards}
+\begin{cvtable}
+	\cvitem{2010 -- now}{Tiger of the Year}{OBS}{}
+	\cvitem{2001 -- now}{Voila Engine Search}{H3D}{}
+\end{cvtable}
+
+
+\cvsection{Extra-Curricular Activities}
+\begin{cvtable}
+	\cvitemshort{Sports}{Sailing, Golf}
+	\cvitemshort{Music}{Drums}
+	\cvitemshort{Education}{Machine Learning, CNN, AI}
+\end{cvtable}
+
+
+\newpage
+\makebacksidebar
+% \newgeometry{
+% 	top=\topbottommargin,
+% 	bottom=\topbottommargin,
+% 	right=\leftrightmargin,
+% 	left=\leftrightmargin
+% }
+
+\cvsection{section}
+\cvsubsection{Subsection}
+\begin{cvtable}
+	\cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
+\end{cvtable}
+
+\cvsection{cvitem}
+\cvsubsection{Multi-line with longer description}
+\begin{cvtable}
+	\cvitem{date}{Description}{location}{Some longer and more detailed
+		description, that takes two lines of space instead of only one.}
+	\cvitem{date}{Description}{location}{Some longer and more detailed
+		description, that takes two lines of space instead of only one.}
+	\cvitem{date}{Description}{location}{Some longer and more detailed
+		description, that takes two lines of space instead of only one.}
+\end{cvtable}
+
+\cvsubsection{One-line without description}
+\begin{cvtable}
+	\cvitem{Award}{One-line description}{Sponsor}{}
+	\cvitem{Award}{One-line description}{Sponsor}{}
+	\cvitem{Award}{One-line description}{Sponsor}{}
+\end{cvtable}
+
+\cvsection{cvitemshort}
+\cvsubsection{One-line}
+\begin{cvtable}
+	\cvitemshort{Key}{Some further description}
+	\cvitemshort{Key}{Some further description}
+	\cvitemshort{Key}{Some further description}
+\end{cvtable}
+
+\cvsubsection{Multi-line with longer description}
+\begin{cvtable}
+	\cvitemshort{Key}{Some further description. Can fill even more than
+		only one single line while still keeping the correct indendation level.}
+	\cvitemshort{Key}{Some further description. Can fill even more than
+		only one single line while still keeping the correct indendation level.}
+	\cvitemshort{Key}{Some further description. Can fill even more than
+		only one single line while still keeping the correct indendation level.}
+\end{cvtable}
+
+%\cvsignature
+\begin{Form}
+  \digsigfield{5cm}{3cm}{\cvsignature}
+\end{Form}
+\end{document}
