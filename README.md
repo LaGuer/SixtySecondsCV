@@ -1,6 +1,7 @@
 # SixtySecondsCV
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/LaGuer/SixtySecondsCV/master?urlpath=lab%2Ftree%2FSixtySecondsCV.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LaGuer/SixtySecondsCV/master)
+
 
 - Wait for jupyter to start ...
 - Once started, Select New : Terminal from Jupyter
