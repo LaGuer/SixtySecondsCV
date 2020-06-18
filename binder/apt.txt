@@ -1,11 +1,10 @@
+texlive-xetex
+texlive-luatex
 texlive-latex-extra
 texlive-fonts-extra
 texlive-fonts-recommended
 texlive-latex-recommended
 texlive-generic-recommended
-texlive-xetex
-texlive-luatex
-fonts-lato
 dvipng
 xzdec
 zip
