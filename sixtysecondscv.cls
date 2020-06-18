@@ -217,8 +217,8 @@
 
 % pictures, icons and drawings
 \ifxetexorluatex
-	%\RequirePackage{fontawesome5}
-	\RequirePackage{fontawesome}
+	\RequirePackage{fontawesome5}
+	%\RequirePackage{fontawesome}
 	\RequirePackage{academicons}
 \else
 	\RequirePackage{fontawesome}
