@@ -1,0 +1,11 @@
+# set -ex
+# pip install .
+jupyter labextension install @jupyterlab/latex@0.6.1
+#wget http://mirrors.ctan.org/install/macros/text1.zip
+#wget http://mirrors.ctan.org/install/macros/latex/contrib/ulem.zip
+wget http://mirrors.ctan.org/fonts/fontawesome5.zip
+wget http://mirrors.ctan.org/fonts/academicons.zip
+chmod +x installAcademicons 
+wget http://mirrors.ctan.org/info/symbols/comprehensive.zip
+chmod +x comprehensive
+# installAcademicons
