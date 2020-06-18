@@ -5,6 +5,6 @@
 
 - Wait for jupyter to start ...
 - Once started, Select New : Terminal from Jupyter
-- from the shell prompt type ```lualatex SixtySecondsCV.tex```
-- Press Enter
+- from the shell prompt type ```xelatex --shell-escape SixtySecondsCV.tex```
+- Press Enter as many times as required
 - PDF is generated and ready for download .
