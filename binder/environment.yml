@@ -1,0 +1,23 @@
+name: SixtySecondsCV
+#channels:
+#  - conda-forge
+dependencies:
+  - python =3.7
+  - numpy
+  - matplotlib
+  - pandas
+  - sympy
+  - scipy
+  - quantities
+  - pillow
+  - ipywidgets
+  - jupyterlab =0.35
+  - notebook =5.7.4
+  - pip
+  - pytest
+  - pip:
+      - julia
+      - nbval
+      - nbdime
+      - jupyterlab_latex
+      - ipypublish
