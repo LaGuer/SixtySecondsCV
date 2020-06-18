@@ -5,6 +5,7 @@ texlive-fonts-extra
 texlive-fonts-recommended
 texlive-latex-recommended
 texlive-generic-recommended
+latexmk
 dvipng
 xzdec
 zip
