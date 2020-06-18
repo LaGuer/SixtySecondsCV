@@ -31,10 +31,10 @@
 	a4paper,
 	% showframes,
 	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=gray!50,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
+	%maincolor=cvgreen,
+	sidecolor=gray!50,
+	sectioncolor=materialblue,
+	subsectioncolor=materialindigo,
 	% itemtextcolor=black!80,
 	% sidebarwidth=0.4\paperwidth,
 	% topbottommargin=0.03\paperheight,
@@ -42,7 +42,7 @@
 	profilepicsize=3.5cm,
 	% profilepicborderwidth=3.5pt,
 	profilepicstyle=profilecircle,
-	profilepiczoom=0.75,
+	profilepiczoom=1.0,
 	% profilepicxshift=0mm,
 	% profilepicyshift=0mm,
 	% profilepicrounding=1.0cm,
@@ -50,91 +50,10 @@
 	% logospace=5mm,
 	% logoposition=before,
 ]{sixtysecondscv}
-
-% improve word spacing and hyphenation
-\usepackage{microtype}
-\usepackage{ragged2e}
-\usepackage{hyperref}
-\usepackage{digsig}
-\usepackage[demo]{graphicx}
-% uncomment in case you don't want any hyphenation
-% \usepackage[none]{hyphenat}
-
-% take care of proper font encoding
-\ifxetexorluatex
-	\usepackage{fontspec}
-	\defaultfontfeatures{Ligatures=TeX}
-%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
-\else
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
-%	\usepackage[sfdefault]{noto} % use noto google font
-\fi
-
-% enable mathematical syntax for some symbols like \varnothing
-\usepackage{amssymb}
-
-% bubble diagram configuration
-\usepackage{smartdiagram}
-\smartdiagramset{
-	% default font size is \large, so adjust to harmonize with sidebar layout
-	bubble center node font = \footnotesize,
-	bubble node font = \footnotesize,
-	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
-	bubble center node size = 0.4\sidebartextwidth,
-	bubble node size = 0.25\sidebartextwidth,
-	distance center/other bubbles = 1.5em,
-	% set center bubble color
-	bubble center node color = maincolor!70,
-	% define the list of colors usable in the diagram
-	set color list = {maincolor!10, maincolor!40,
-	maincolor!20, maincolor!60, maincolor!35},
-	% sets the opacity at which the bubbles are shown
-	bubble fill opacity = 0.8,
-}
-
-\newcommand\watermark[1]{%
-    #1%
-    \sbox0{#1}%
-    \llap{%
-    \makebox[\wd0][c]{%  hor. centering
-    \raisebox{.5\ht0}{%  approx. vert. centering
-    \csname Gin@isotrue\endcsname% = "keepaspectratio"
-    \resizebox*{.8\ht0}{.8\ht0}{% Scale down (the height is also used for the width to avoid the surrounding spaces)
-    \parbox{10em}{% Allow line breaks
-            \color{black!90}%  
-            PDF seal issued by \cvsignature
-        }%
-    }}}}%
-}
 
 %-------------------------------------------------------------------------------
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
-\documentclass[
-	a4paper,
-	% showframes,
-	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=gray!50,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
-	% itemtextcolor=black!80,
-	% sidebarwidth=0.4\paperwidth,
-	% topbottommargin=0.03\paperheight,
-	% leftrightmargin=20pt,
-	% profilepicsize=4.5cm,
-	% profilepicborderwidth=3.5pt,
-	% profilepicstyle=profilecircle,
-	% profilepiczoom=1.0,
-	% profilepicxshift=0mm,
-	% profilepicyshift=0mm,
-	% profilepicrounding=1.0cm,
-	% logowidth=4.5cm,
-	% logospace=5mm,
-	% logoposition=before,
-]{sixtysecondscv}
-
 % improve word spacing and hyphenation
 \usepackage{microtype}
 \usepackage{ragged2e}
@@ -169,8 +88,8 @@
 	% set center bubble color
 	bubble center node color = maincolor!70,
 	% define the list of colors usable in the diagram
-	set color list = {maincolor!10, maincolor!40,
-	maincolor!20, maincolor!60, maincolor!35},
+	set color list = {materiallime, materialamber,
+	materialcyan, materialblue, materialindigo},
 	% sets the opacity at which the bubbles are shown
 	bubble fill opacity = 0.8,
 }
@@ -195,7 +114,7 @@
 
 %% optional information
 % profile picture
-\cvprofilepic{QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM?filename=QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM.png}
+\cvprofilepic{QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM.png}
 % logo picture
 %\cvlogopic{pics/logo_txt.png}
 
@@ -206,7 +125,7 @@
 \cvaddress{301 Park Ave, New-York, 10022 NY, USA}
 % phone number
 \cvphone{+1 212 355 3000}
-% skype id 
+% skype ID
 \cvskype{myskypeID}
 % personal website
 \cvsite{https://laguer.github.io/sixtysecondscv/}
@@ -230,8 +149,11 @@
 	\profilesection{Social Network}
 		\begin{icontable}{2.5em}{1em}
 			\social{\aiOverleafSquare}
-				{https://www.overleaf.com/latex/templates/sixtysecondscv/gcdrzwwvkqcr}
-				{overleaf Link}
+				{https://www.overleaf.com/latex/templates/SixtySecondsCV/}
+				{Overleaf Link}
+			\social{\aiResearchGate}
+				{https://www.researchgate.net/profile/}
+				{Researchgate Link}
 			\social{\faGithub}
 				{https://github.com/LaGuer/SixtySecondsCV}
 				{Github Project Page Link}
@@ -242,21 +164,26 @@
     \pointskill{\flag{Spain.png}}{Spanish}{3}
 	  \pointskill{\flag{United-States.png}}{English}{5}
 	  \pointskill{\flag{France.png}}{French}{5}
-    \pointskill{\flag{Russia.png}}{Russia}{5}
-
-	\profilesection{Hard Skills}
-		\skill{\faBalanceScale}{Sleeping almost all day}
-		\skill{\faSitemap}{Eating a lot of bamboo sprouts}
-		\skill{\faGraduationCap}{Relaxing rest of the day}
-
-	\profilesection{Soft Skills}
-		\pointskill{\faHome}{Looking Cute}{4}[4]
-			\skill[1.8em]{\faCompress}{No need to specify further}
-		\pointskill{\faChild}{Chillin' hard}{3}[4]
-			\skill[1.8em]{\faCompress}{On a tree}
-			\skill[1.8em]{\faCompress}{In the grass}
+    %\pointskill{\flag{Russia.png}}{Russia}{5}
+    
+    \begin{figure}\centering
+		\smartdiagram[bubble diagram]{
+			\textcolor{white}{\textbf{Being a}} \\
+			\textcolor{white}{\textbf{Panda}}, % center bubble
+			\textcolor{black!90}{Eating},
+			\textcolor{black!90}{Sleeping},
+			\textcolor{black!90}{Rolling},
+			\textcolor{black!90}{Playing},
+			\textcolor{black!90}{Chilling}
+		}
+	\end{figure}
+	
+	\profilesection{Barskills}
+	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+	\barskill{\faImage}{Playing Chess}{30}
+	\barskill{\faMusic}{Playing the bamboo stick}{50}
 }
-
+    
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 2nd PAGE
@@ -301,7 +228,19 @@
 	30/4em/maincolor!40/Sleep,
 	20/3em/maincolor!20/Eat
 	}
+	
+	\profilesection{Hard Skills}
+		\skill{\faBalanceScale}{Sleeping almost all day}
+		\skill{\faSitemap}{Eating a lot of bamboo sprouts}
+		\skill{\faGraduationCap}{Relaxing rest of the day}
 
+	\profilesection{Soft Skills}
+		\pointskill{\faHome}{Looking Cute}{4}[4]
+			\skill[1.8em]{\faCompress}{No need to specify further}
+		\pointskill{\faChild}{Chillin' hard}{3}[4]
+			\skill[1.8em]{\faCompress}{On a tree}
+			\skill[1.8em]{\faCompress}{In the grass}
+			
 	\profilesection{Barskills}
 	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
 	\barskill{\faImage}{Playing Chess}{30}
@@ -309,9 +248,9 @@
 
 	\profilesection{Memberships}
 	\begin{memberships}
-		\membership[4em]{pics/logo.png}{some.site}
-		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
-			only one line}
+		%\membership[4em]{pics/logo.png}{some.site}
+		%\membership[4em]{pics/logo.png}{Some longer text spanning over more than
+		%	only one line}
 	\end{memberships}
 }
 
@@ -437,8 +376,8 @@
 		only one single line while still keeping the correct indendation level.}
 \end{cvtable}
 
-%\cvsignature
-\begin{Form}
-  \digsigfield{5cm}{3cm}{\cvsignature}
-\end{Form}
+\cvsignature  \watermark.
+%\begin{Form}
+%  \digsigfield{5cm}{3cm}{\cvsignature}
+%\end{Form}
 \end{document}
