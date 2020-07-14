@@ -14,6 +14,6 @@
 
 | Latex Doc Type                |      "*.cls"                 |        "*.tex"              |      Compile in PDF                                                                                                                                    |
 | ----------------------------- |:----------------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|SixtySecondsCV Format  |[sixtysecondscv.cls](sixtysecondscv.cls)| [sixtysecondscv.tex](sixtysecondscv.tex )       |[latexonline.cc main.tex](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2FLaGuer%2Fsixtysecondscv&target=sixtysecondscv.tex&command=xelatex)      |
+|SixtySecondsCV Format  |[sixtysecondscv.cls](sixtysecondscv.cls)| [sixtysecondscv.tex](sixtysecondscv.tex )       |[latexonline.cc main.tex](https://latexonline.cc/compile?git=https%3A%2F%2Fraw.githubusercontent.com%2FLaGuer%2Fsixtysecondscv%2Fgh-pages&target=sixtysecondscv.tex&command=pdflatex)      |
 
 
