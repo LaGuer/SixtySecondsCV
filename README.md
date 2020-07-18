@@ -16,6 +16,6 @@
 
 | Latex Doc Type                |      "*.cls"                 |        "*.tex"              |      Compile in PDF                                                                                                                                    |
 | ----------------------------- |:----------------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|SixtySecondsCV Format  |[sixtysecondscv.cls](sixtysecondscv.cls)| [sixtysecondscv.tex](sixtysecondscv.tex )       |[mybinder.org sixtysecondscv.tex](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LaGuer/SixtySecondsCV/master)      |
+|SixtySecondsCV Format  |[sixtysecondscv.cls](sixtysecondscv.cls)| [sixtysecondscv.tex](sixtysecondscv.tex )       |[mybinder.org sixtysecondscv.tex](https://mybinder.org/v2/gh/LaGuer/SixtySecondsCV/master)      |
 
 
