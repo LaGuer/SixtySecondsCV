@@ -5,9 +5,9 @@
 1. From MyBinder
 - Wait for jupyter to start ...
 - Once started, Select New : Terminal from Jupyter
-- from the shell prompt type ```pdflatex --shell-escape SixtySecondsCV.tex```
+- from the shell prompt type ```pdflatex --shell-escape sixtysecondscv.tex```
 - Press Enter as many times as required; this step will download external sources for the images.
-- from the shell prompt type ```lualatex --shell-escape SixtySecondsCV.tex```
+- from the shell prompt type ```lualatex --shell-escape sixtysecondscv.tex```
 - Press Enter as many times as required; this step will generate the pdf file with images included
 - PDF is generated and ready for download .
 
