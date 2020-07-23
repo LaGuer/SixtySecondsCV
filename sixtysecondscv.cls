@@ -379,7 +379,9 @@
 \newcommand*{\cvskype}[1]{\cvcustomdata{\faSkype}{\href{skype:#1?call}{#1}}}
 \newcommand*{\cvsite}[1]{\cvcustomdata{\faGlobe}{\href{#1}{#1}}}
 \newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\href{mailto:#1}{#1}}}
-\newcommand*{\cvorcid}[1]{\cvcustomdata{\faOrcid}{\href{orcid:#1}{#1}}}
+\newcommand*{\cvorcid}[1]{\cvcustomdata{\aiOrcid}{%
+    \href{https://orcid.org/orcid-search/search?searchQuery=#1}{#1}%
+}}
 \newcommand*{\cvkey}[2]{\cvcustomdata{\faKey}{%
 	\href{https://keyserver.ubuntu.com/pks/lookup?search=#2\&op=vindex\&fingerprint=on}{#1}%
 }}
