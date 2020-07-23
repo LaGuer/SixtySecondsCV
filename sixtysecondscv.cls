@@ -29,7 +29,7 @@
 %                           CLASS NAME AND VERSION
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sixtysecondscv}[2020/06/09 CV class]
+\ProvidesClass{sixtysecondscv}[2020/07/23 CV class]
 
 
 %-------------------------------------------------------------------------------
@@ -379,6 +379,9 @@
 \newcommand*{\cvskype}[1]{\cvcustomdata{\faSkype}{\href{skype:#1?call}{#1}}}
 \newcommand*{\cvsite}[1]{\cvcustomdata{\faGlobe}{\href{#1}{#1}}}
 \newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\href{mailto:#1}{#1}}}
+\newcommand*{\cvorcid}[1]{\cvcustomdata{\aiOrcid}{%
+    \href{https://orcid.org/orcid-search/search?searchQuery=#1}{#1}%
+}}
 \newcommand*{\cvkey}[2]{\cvcustomdata{\faKey}{%
 	\href{https://keyserver.ubuntu.com/pks/lookup?search=#2\&op=vindex\&fingerprint=on}{#1}%
 }}
@@ -398,9 +401,9 @@
 		\begin{tikzpicture}[x=\profilepicsize, y=\profilepicsize]
 			\begin{scope}
 				\path[clip]
-					(0, 0) [sharp corners] --
+					(0, 0) [rounded corners=\profilepicrounding] --
 					(0, 1) [rounded corners=\profilepicrounding] --
-					(1, 1) [sharp corners] --
+					(1, 1) [rounded corners=\profilepicrounding] --
 					(1, 0) [rounded corners=\profilepicrounding] -- cycle;
 				\node[anchor=center, inner sep=0pt, xshift=\profilepicxshift,
 						yshift=\profilepicyshift] (profilepic) at (0.5, 0.5)
@@ -410,9 +413,9 @@
 			\ifdim \profilepicborderwidth > 0pt
 				\begin{scope}
 					\draw[line width=\profilepicborderwidth, color=iconcolor]
-					(0, 0) [sharp corners] --
+					(0, 0) [rounded corners=\profilepicrounding] --
 					(0, 1) [rounded corners=\profilepicrounding] --
-					(1, 1) [sharp corners] --
+					(1, 1) [rounded corners=\profilepicrounding] --
 					(1, 0) [rounded corners=\profilepicrounding] -- cycle;
 				\end{scope}
 			\fi
@@ -519,13 +522,16 @@
 \newcommand\skills{ 
 ~
 	\smartdiagram[bubble diagram]{
-        \textbf{Data}\\\textbf{Engineering},
+        \textbf{Data}\\\textbf{Analyst},
         \textbf{Full Stack}\\\textbf{Dev},
         \textbf{~~~~~~~~OOP~~~~~~~~~},
         \textbf{~~~~~~Machine~~~~~~}\\\textbf{~~Learning~~},
         \textbf{~~~~~DevOps~~~~~}
     }
 }
+
+% make sure about me text stays in textbox frame
+\newcommand{\Environment}[1]{\parbox[b]{\linewidth}{#1}}
 
 % label for wheel charts
 \newcommand{\chartlabel}[1]{%
@@ -673,6 +679,7 @@
 % default: empty sidebar
 \newcommand{\frontsidebar}{}
 \newcommand{\backsidebar}{}
+\newcommand{\nbacksidebar}{}
 \newcommand{\addtofrontsidebar}[1]{\apptocmd{\frontsidebar}{#1}{}{}}
 \newcommand{\addtobacksidebar}[1]{\apptocmd{\backsidebar}{#1}{}{}}
 \newcommand{\addtonbacksidebar}[1]{\apptocmd{\nbacksidebar}{#1}{}{}}
@@ -723,12 +730,16 @@
 	\begin{sidebar}
 		% begin with name instead of picture
 		\nameandjob
+        
+        %\skills
 
 		% make sure there is no space at top, but after cvjob
 		\setlength{\parskip}{1ex}
-                \plotlogobefore
+                %\plotlogobefore
 		% user definitions
-		\backsidebar
+        %\skill
+        %\environment
+		\nbacksidebar
 	\end{sidebar}
 }
 
